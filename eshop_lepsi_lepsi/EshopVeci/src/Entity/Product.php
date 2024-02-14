@@ -20,6 +20,15 @@ class Product
     #[ORM\Column]
     private ?int $price = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $description = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $image_path = null;
+
+    #[ORM\Column]
+    private ?int $num_of_buys = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -47,5 +56,47 @@ class Product
         $this->price = $price;
 
         return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): static
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getImagePath(): ?string
+    {
+        return $this->image_path;
+    }
+
+    public function setImagePath(string $image_path): static
+    {
+        $this->image_path = $image_path;
+
+        return $this;
+    }
+
+    public function getNumOfBuys(): ?int
+    {
+        return $this->num_of_buys;
+    }
+
+    public function setNumOfBuys(int $num_of_buys): static
+    {
+        $this->num_of_buys = $num_of_buys;
+
+        return $this;
+    }
+
+    public function getNoDPHPrice(): ?int
+    {
+        $dph_price = $this->price - ($this->price * 0.21);
+        return $dph_price;
     }
 }
