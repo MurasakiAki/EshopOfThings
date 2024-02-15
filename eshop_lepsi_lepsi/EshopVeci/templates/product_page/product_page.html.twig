@@ -3,7 +3,20 @@
 {% block title %}{{ product.name }}{% endblock %}
 
 {% block body %}
-    <h1>{{ product.name }}</h1>
-    <p>Price: {{ product.price }} CZK</p>
-    <p>Description: {{ product.description }}</p>
+    <div class="product-page">
+        <div class="product-container">
+            <div class="imageholder">
+                <img src="https://picsum.photos/1000/1000" alt="{{ product.name }} image">
+            </div>
+            <div class="info">
+                <h1>{{ product.name }}</h1>
+                <p class="product-description">{{ product.description }} THIS WILL BE REMOVED IN FULL VERSION Lorem ipsum dolor sit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quidem, quisquam! Debitis dolore eius eum iste iure maxime obcaecati odit optio provident quae quam quibusdam quisquam, quod quos, saepe. Ad?amet, consectetur adipisicing elit. Iusto nostrum suam aut autem ea harum .</p>
+                <div class="info-bottom">
+                    <p class="product-price">{{ product.price }} Kč</p>
+                    <p class="product-price-vatexcl"></p>
+                    <button class="product-buy">Koupě</button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
