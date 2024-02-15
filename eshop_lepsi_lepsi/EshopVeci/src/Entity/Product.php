@@ -99,4 +99,22 @@ class Product
 
         return $this;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Order", inversedBy="products")
+     */
+    private $order;
+
+    public function getOrder(): ?Order
+    {
+        return $this->order;
+    }
+
+    public function setOrder(?Order $order): self
+    {
+        $this->order = $order;
+
+        return $this;
+    }
+
 }

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informace o objednávce{% endblock %}
+
+{% block body %}
+    <h1>Vyplňte</h1>
+    <form action="{{ path('confirm_order_page') }}" method="post">
+        <label for="name">Jméno:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="surname">Příjmení:</label>
+        <input type="text" id="surname" name="surname" required><br><br>
+        
+        <label for="address">Adresa:</label>
+        <textarea id="address" name="address" rows="4" required></textarea><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <button type="submit">Potvrdit objednávku</button>
+    </form>
+{% endblock %}

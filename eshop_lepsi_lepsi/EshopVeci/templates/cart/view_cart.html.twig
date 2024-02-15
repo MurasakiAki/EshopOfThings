@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Shopping Cart{% endblock %}
+
+{% block body %}
+    <h1>Shopping Cart</h1>
+    <div class='price-list'>
+        <table>
+            <thead>
+                <tr>
+                    <th>Název</th>
+                    <th>Cena</th>
+                    <th>Cena bez DPH</th>
+                    <th>Akce</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }} CZK</td>
+                        <td>{{ product.getNoDPHPrice() }} CZK</td>
+                        <td> 
+                            <form action="{{ path('remove_from_cart', {'productId': product.id}) }}" method="post">
+                                <button type="submit">Odebrat</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="3">Cel. cena</td>
+                    <td>{{ finalPrice }}</td>
+                    <td>{{ finalPriceTaxless }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <form action="{{ path('make_order_page') }}">
+        <button type="submit">Koupit</button>
+    </form>
+{% endblock %}

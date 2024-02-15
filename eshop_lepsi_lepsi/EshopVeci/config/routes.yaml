@@ -4,10 +4,38 @@ controllers:
         namespace: App\Controller
     type: attribute
     
-product_index:
+index:
     path: /
-    controller: App\Controller\ProductController::index
+    controller: App\Controller\HomePageController::index
 
 product_page:
     path: /product/{productId}
     controller: App\Controller\ProductPageController::show
+
+search_page:
+    path: /category/{category}
+    controller: App\Controller\SearchController::search_category
+
+search_name_page:
+    path: /search
+    controller: App\Controller\SearchController::search_name
+
+add_to_cart:
+    path: /cart/add/{productId}
+    controller: App\Controller\CartController::addToCart
+
+view_cart:
+    path: /cart/view
+    controller: App\Controller\CartController::viewCart
+
+remove_from_cart:
+    path: /cart/remove/{productId}
+    controller: App\Controller\CartController::removeFromCart
+
+make_order_page:
+    path: /cart/order
+    controller: App\Controller\CartController::makeOrder
+
+confirm_order_page:
+    path: /cart/confirm_order
+    controller: App\Controller\CartController::confirmOrder

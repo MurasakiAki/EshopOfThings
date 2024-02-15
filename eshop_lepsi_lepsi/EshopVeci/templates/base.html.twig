@@ -14,28 +14,28 @@
     </head>
     <header>
         <div class="header-main">
-            <h1><a href="">The Věci</a></h1>
+            <h1><a href="{{ path('index') }}">The Věci</a></h1>
             <div class="searchbar">
-                <input type="text">
-                <button>Search</button>
+                <input type="text" id="name_to_search" name="name_to_search">
+                <button><a href="{{ path('search_name_page') }}">Search</button>
             </div>
 
             <nav>
                 <ul>
                     <li><a href=""><span class="material-symbols-outlined">person</span></a></li>
-                    <li><a href=""><span class="material-symbols-outlined">shopping_cart</span></a></li>
+                    <li><a href="{{ path('view_cart') }}"><span class="material-symbols-outlined">shopping_cart</span></a></li>
                 </ul>
             </nav>
         </div>
         <div class="header-categories">
             <ul>
-                <li><a href="">Domácnost</a></li>
-                <li><a href="">AutoMoto</a></li>
-                <li><a href="">Koupelna</a></li>
-                <li><a href="">Ťěžba nerostných surovin</a></li>
-                <li><a href="">Zahrada</a></li>
-                <li><a href="">Sport</a></li>
-                <li><a href="">Portaviny</a></li>
+                <li><a href="{{ path('search_page', {'category': 'home'}) }}">Domácnost</a></li>
+                <li><a href="{{ path('search_page', {'category': 'automoto'}) }}">AutoMoto</a></li>
+                <li><a href="{{ path('search_page', {'category': 'bathroom'}) }}">Koupelna</a></li>
+                <li><a href="{{ path('search_page', {'category': 'mining'}) }}">Ťěžba nerostných surovin</a></li>
+                <li><a href="{{ path('search_page', {'category': 'garden'}) }}">Zahrada</a></li>
+                <li><a href="{{ path('search_page', {'category': 'sport'}) }}">Sport</a></li>
+                <li><a href="{{ path('search_page', {'category': 'food'}) }}">Portaviny</a></li>
             </ul>
         </div>
     </header>

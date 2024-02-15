@@ -17,6 +17,10 @@ class HomePageController extends AbstractController
     {
         $products = $this->productRepository->findAll();
 
+        usort($products, function ($a, $b) {
+            return $b->getNumOfBuys() <=> $a->getNumOfBuys();
+        });
+
         return $this->render('home_page/index.html.twig', [
             'products' => $products,
         ]);
