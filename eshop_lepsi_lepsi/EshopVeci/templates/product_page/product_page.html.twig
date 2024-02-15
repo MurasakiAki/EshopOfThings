@@ -14,7 +14,9 @@
                 <div class="info-bottom">
                     <p class="product-price">{{ product.price }} Kč</p>
                     <p class="product-price-vatexcl"></p>
-                    <button class="product-buy">Koupě</button>
+                    <form action="{{ path('make_order_page') }}">
+                                <button type="submit">Koupě</button>
+                    </form>
                 </div>
             </div>
         </div>
