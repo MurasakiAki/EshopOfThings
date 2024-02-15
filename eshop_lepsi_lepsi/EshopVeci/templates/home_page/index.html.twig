@@ -3,14 +3,13 @@
 {% block title %}Eshop Věcí{% endblock %}
 
 {% block body %}
-    <h1>Welcome to our e-shop!</h1>
     <div class="product-list">
         {% for product in products %}
             <a href="{{ path('product_page', {'productId': product.id}) }}" class="product">
                 <div>
                     <h2>{{ product.name }}</h2>
-                    <p>Price: {{ product.price }} CZK</p>
-                    <p>Description: {{ product.description }}</p>
+                    <p>{{ product.price }} Kč</p>
+                    <p class="description">{{ product.description }}</p>
                 </div>
             </a>
         {% endfor %}

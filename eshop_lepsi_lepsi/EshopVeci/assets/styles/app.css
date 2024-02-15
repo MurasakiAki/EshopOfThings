@@ -5,8 +5,19 @@ html, body {
     font-family: "Segoe UI";
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 a {
+    transition: 0.3s;
     text-decoration: none;
+}
+
+a:hover {
+    transition: 0.3s;
 }
 
 

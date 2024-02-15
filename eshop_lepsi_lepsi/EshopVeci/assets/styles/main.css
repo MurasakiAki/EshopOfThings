@@ -1,53 +1,139 @@
+/* Main page - products*/
 main {
-    display: flex;
-    flex-direction: row;
-
-
+    padding: 2rem;
 }
 
-#categories {
-
-}
-
-.container {
-    margin: 3rem;
-
-    width: 100%;
-}
-
-.items {
+.product-list {
     display: grid;
-    grid-auto-columns: auto;
-    grid-row-gap: 1.5rem;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
 
+.product-list .product {
+    border: 1px solid #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+.product-list .product .description {
+    font-style: italic;
+}
+
+
+
+
+/* Single product page */
+.product-page {
+    display: flex;
+    justify-content: center;
+}
+
+.product-page .product-container {
+    width: 100%;
+    max-width: 75rem;
+
+    display: flex;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-page .imageholder {
+    width: 60%;
+}
+
+.product-page img {
+    height: 100%;
     width: 100%;
 }
 
-.item {
-    height: 15rem;
-    width: 12rem;
+.product-page .info {
+    height: 100%;
+    width: 40%;
+    padding: 0 2rem;
+
+    position: relative;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    border: 1px solid rgba(128, 128, 128, 0.14);
 }
 
-.item-image-container {
-    height: 10rem;
-    width: 10rem;
-
-    background-color: black;
-}
-
-.item-name {
+.product-page .info h1 {
+    padding: 1rem 0 0 0;
     margin: 0;
-    padding: 0;
+    font-size: 50px;
 }
 
-.item-button {
-    margin-bottom: .5rem;
+.product-page .info .product-description {
+    height: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
+.product-page .info .info-bottom {
+    width: 50%;
+
+    padding-bottom: 2rem;
+
+    position: absolute;
+    bottom: 0;
+}
+
+.product-page .product-price {
+    margin: 0;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    color: #551a8b;
+}
+
+.product-page .product-price-vatexcl {
+    margin: 0;
+    margin-bottom: 1rem;
+    color: grey;
+}
+
+.product-page .product-buy {
+    transition: 0.3s;
+
+    width: 100%;
+    padding: 5px;
+
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "Segoe UI";
+
+    border: 2px solid #551a8b;
+    border-radius: 1rem;
+
+    background-color: #551a8b;
+    color: white;
+}
+
+.product-page .product-buy:hover {
+    transition: 0.3s;
+
+    background-color: white;
+    color: #551a8b;
+}
+
+
+
+
+@media only screen and (max-width: 760px) {
+    .product-page .product-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-page .imageholder {
+        width: 100%;
+    }
+
+    .product-page .info {
+        height: 25rem;
+        width: 85%;
+    }
+}
+
+
+
