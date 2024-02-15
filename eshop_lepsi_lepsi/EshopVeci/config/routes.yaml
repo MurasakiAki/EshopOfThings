@@ -8,6 +8,6 @@ product_index:
     path: /
     controller: App\Controller\ProductController::index
 
-product_show:
-    path: /product/{id}
-    controller: App\Controller\ProductController::show
+product_page:
+    path: /product/{productId}
+    controller: App\Controller\ProductPageController::show

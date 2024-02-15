@@ -23,11 +23,11 @@ class Product
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $image_path = null;
-
     #[ORM\Column]
     private ?int $num_of_buys = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $category = null;
 
     public function getId(): ?int
     {
@@ -70,18 +70,6 @@ class Product
         return $this;
     }
 
-    public function getImagePath(): ?string
-    {
-        return $this->image_path;
-    }
-
-    public function setImagePath(string $image_path): static
-    {
-        $this->image_path = $image_path;
-
-        return $this;
-    }
-
     public function getNumOfBuys(): ?int
     {
         return $this->num_of_buys;
@@ -98,5 +86,17 @@ class Product
     {
         $dph_price = $this->price - ($this->price * 0.21);
         return $dph_price;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->category;
+    }
+
+    public function setCategory(string $category): static
+    {
+        $this->category = $category;
+
+        return $this;
     }
 }
