@@ -119,3 +119,21 @@ main {
 
 
 
+@media only screen and (max-width: 760px) {
+    .product-page .product-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-page .imageholder {
+        width: 100%;
+    }
+
+    .product-page .info {
+        height: 25rem;
+        width: 85%;
+    }
+}
+
+
+
