@@ -9,23 +9,29 @@
         {% endblock %}
 
         {% block javascripts %}
-    {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <header>
         <div class="header-main">
-            <h1><a href="">The Věci</a></h1>
-            <div class="searchbar">
+            <h1><a href="/">The Věci</a></h1>
+            <div class="searchbar srchpc">
                 <input type="text">
-                <button>Search</button>
+                <button type="submit">Search</button>
             </div>
-
             <nav>
                 <ul>
-                    <li><a href=""><span class="material-symbols-outlined">person</span></a></li>
-                    <li><a href=""><span class="material-symbols-outlined">shopping_cart</span></a></li>
+                    <li><a href=""><span class="material-symbols-outlined" style="font-size: 35px">person</span></a></li>
+                    <li><a href=""><span class="material-symbols-outlined" style="font-size: 35px">shopping_cart</span></a></li>
+                    <li id="cat-menu"><a href="" id="brgr"><span class="material-symbols-outlined" style="font-size: 35px">menu</span></a></li>
                 </ul>
             </nav>
+        </div>
+        <div class="searchbar srchmobile">
+            <div>
+                <input type="text">
+                <button type="submit">Search</button>
+            </div>
         </div>
         <div class="header-categories">
             <ul>
@@ -39,7 +45,6 @@
             </ul>
         </div>
     </header>
-
     <body>
         {% block body %}{% endblock %}
     </body>

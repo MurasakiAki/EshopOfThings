@@ -36,6 +36,10 @@ header a:hover {
     display: flex;
 }
 
+.srchmobile {
+    display: none;
+}
+
 .searchbar input {
     margin: 0;
     padding: 0 1rem;
@@ -74,6 +78,9 @@ header a:hover {
 
 .header-categories {
     padding: 1rem 0;
+
+    display: block;
+
     font-size: 20px;
     border-bottom: 2px solid rgba(44, 37, 91, 0.16);
 }
@@ -81,8 +88,6 @@ header a:hover {
 .header-categories ul {
     justify-content: space-evenly;
 }
-
-
 
 header ul {
     margin: 0;
@@ -96,9 +101,47 @@ header ul li {
     padding: 0;
 }
 
+#cat-menu {
+    display: none;
+}
 
-@media only screen and (max-width: 600px) {
-    body {
+@media only screen and (max-width: 760px) {
+    .header-main {
+        padding: 0 1rem;
 
+        border: none;
+    }
+
+    .srchpc {
+        display: none;
+    }
+
+    .srchmobile {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 1rem;
+
+        display: flex;
+    }
+
+    .srchmobile div {
+        width: 100vw;
+        padding: 0 1rem;
+        display: flex;
+    }
+
+    .header-categories {
+        display: none;
+    }
+
+    .header-categories ul {
+        margin: 0;
+        padding: 0 1rem;
+        display: block;
+    }
+
+    #cat-menu {
+        display: block;
     }
 }
+
