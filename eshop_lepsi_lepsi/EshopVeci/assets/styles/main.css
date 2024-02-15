@@ -1,0 +1,53 @@
+main {
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+#categories {
+
+}
+
+.container {
+    margin: 3rem;
+
+    width: 100%;
+}
+
+.items {
+    display: grid;
+    grid-auto-columns: auto;
+    grid-row-gap: 1.5rem;
+    grid-template-rows: auto;
+
+    width: 100%;
+}
+
+.item {
+    height: 15rem;
+    width: 12rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(128, 128, 128, 0.14);
+}
+
+.item-image-container {
+    height: 10rem;
+    width: 10rem;
+
+    background-color: black;
+}
+
+.item-name {
+    margin: 0;
+    padding: 0;
+}
+
+.item-button {
+    margin-bottom: .5rem;
+}

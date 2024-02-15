@@ -2,16 +2,48 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}EshopVěcí{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         {% block stylesheets %}
         {% endblock %}
 
         {% block javascripts %}
-{% block importmap %}{{ importmap('app') }}{% endblock %}
+    {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
+    <header>
+        <div class="header-main">
+            <h1><a href="">The Věci</a></h1>
+            <div class="searchbar">
+                <input type="text">
+                <button>Search</button>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href=""><span class="material-symbols-outlined">person</span></a></li>
+                    <li><a href=""><span class="material-symbols-outlined">shopping_cart</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-categories">
+            <ul>
+                <li><a href="">Domácnost</a></li>
+                <li><a href="">AutoMoto</a></li>
+                <li><a href="">Koupelna</a></li>
+                <li><a href="">Ťěžba nerostných surovin</a></li>
+                <li><a href="">Zahrada</a></li>
+                <li><a href="">Sport</a></li>
+                <li><a href="">Portaviny</a></li>
+            </ul>
+        </div>
+    </header>
+
     <body>
         {% block body %}{% endblock %}
     </body>
+    <footer>
+
+    </footer>
 </html>
