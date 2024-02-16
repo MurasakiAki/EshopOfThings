@@ -14,8 +14,11 @@
                 <div class="info-bottom">
                     <p class="product-price">{{ product.price }} Kč</p>
                     <p class="product-price-vatexcl"></p>
-                    <form action="{{ path('make_order_page') }}">
-                                <button type="submit">Koupě</button>
+
+                    <form action="{{ path('add_to_cart', {'productId': product.id}) }}" method="post">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1">
+                        <button type="submit">Přidat do koše</button>
                     </form>
                 </div>
             </div>
